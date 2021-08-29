@@ -11,14 +11,29 @@ describe("Tickets", () => {
         cy.get("#signature").type(`${firstName} ${lastName}`);
     });
 
-    it("Select two tickets", () => {
+    it("Select opção em um select - Ticket Quantity", () => {
         cy.get("#ticket-quantity").select("2");
     });
 
-    it("select 'vip' ticket type", () => {
+    it("Selecinando radio button - 'vip' ticket type", () => {
         cy.get("#vip").check();
     });
 
-    // it("has 'ticketbox' header's heading", () => {});
+    it("Selecioando checkbox - 'about this event'", () =>{
+        cy.get("#friend").check();
+        cy.get("#publication").check();
+        cy.get("#friend").uncheck();
+    });
+
+    it("Verificando palavra no no cabeçalho - Assert", () => {
+        cy.get("header h1").should("contain","TICKET BOX");
+    });
+
+    it.only("Validando email", () => {
+        cy.get("#email").type("fulano-fulano.com");
+        cy.get("#email.invalid").should("exist");
+        cy.get("#email").clear().type("fulano@fulano.com");
+        cy.get("#email.invalid").should("not.exist");
+    });
 
 });
