@@ -1,0 +1,17 @@
+{
+  "name": "curso-cypress",
+  "version": "1.0.0",
+  "description": "CursoCypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "keywords": [
+    "cypress"
+  ],
+  "author": "Elton",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^8.3.0"
+  }
+}
