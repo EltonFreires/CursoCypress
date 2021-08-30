@@ -29,11 +29,26 @@ describe("Tickets", () => {
         cy.get("header h1").should("contain","TICKET BOX");
     });
 
-    it.only("Validando email", () => {
+    it("Validando email", () => {
         cy.get("#email").type("fulano-fulano.com");
         cy.get("#email.invalid").should("exist");
         cy.get("#email").clear().type("fulano@fulano.com");
         cy.get("#email.invalid").should("not.exist");
+    });
+
+    it.only("preenchendo e resetando o formulário", () => {
+        const firstName = "Ana";
+        const lastName = "Maria";
+        const fullName = `${firstName} ${lastName}`;
+
+        cy.get("#first-name").type(firstName);
+        cy.get("#last-name").type(lastName);
+        cy.get("#email").type("fulano@fulano.com");
+        cy.get("#ticket-quantity").select("2");
+        cy.get("#vip").check();
+        cy.get("#friend").check();
+        cy.get("#requests").type("PCD");
+        cy.get(".agreement p").should("contain", `I, ${fullName}, wish to buy 1 General Admission ticket`);
     });
 
 });
