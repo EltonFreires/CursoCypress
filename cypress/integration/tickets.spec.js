@@ -25,7 +25,7 @@ describe("Tickets", () => {
         cy.get("#friend").uncheck();
     });
 
-    it("Verificando palavra no no cabeçalho - Assert", () => {
+    it("Verificando palavra no cabeçalho - Assert", () => {
         cy.get("header h1").should("contain","TICKETBOX");
     });
 
