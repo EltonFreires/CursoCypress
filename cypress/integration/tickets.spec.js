@@ -1,7 +1,7 @@
 describe("Tickets", () => {
     beforeEach(() => cy.visit("https://ticket-box.s3.eu-central-1.amazonaws.com/index.html"));
 
-    it("fill all the text input fields", () => {
+    it("Preenchendo campos tipo texto", () => {
         const firstName = "Ana";
         const lastName = "Maria";
         cy.get("#first-name").type(firstName);
@@ -25,8 +25,8 @@ describe("Tickets", () => {
         cy.get("#friend").uncheck();
     });
 
-    it("Verificando palavra no no cabeçalho - Assert", () => {
-        cy.get("header h1").should("contain","TICKET BOX");
+    it("Verificando palavra no cabeçalho - Assert", () => {
+        cy.get("header h1").should("contain","TICKETBOX");
     });
 
     it("Validando email", () => {
@@ -57,13 +57,13 @@ describe("Tickets", () => {
         cy.get("@submitButton").should("be.disabled");
     });
 
-    it.only("preenchendo campos obrigatórios", () => {
-       const customer = {
+    it("preenchendo campos obrigatórios", () => {
+       const dadosUsuario = {
         firstName: "Ana",
         lastName: "Maria",        
         email: "fulano@fulano.com"
        };       
-       cy.fillMandatoryFields(customer);
+       cy.preencherCamposObrigatorios(dadosUsuario);
 
        cy.get("button[type='submit']").as("submitButton").should("not.be.disabled");
        cy.get("#agree").uncheck();

@@ -4,7 +4,8 @@
   "description": "CursoCypress",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run"
+    "open": "cypress open",
+    "run": "cypress run"
   },
   "keywords": [
     "cypress"
