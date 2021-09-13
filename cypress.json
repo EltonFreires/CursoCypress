@@ -1,4 +1,6 @@
 {
     "viewportWidth": 1440,
-    "viewportHeight": 900
+    "viewportHeight": 900,
+    "video": false,
+    "screenshotOnRunFailure": false
 }
