@@ -1,3 +1,17 @@
+/* 
+    Extensões
+
+ https://www.youtube.com/watch?v=JGVB97ns0NQ
+- ES6 Mocha Snippets - auto complite describe, context, ... 
+- Cypress Snippets - auto complite commands
+- Add Only
+- Fold Plus - minimiza todos os testes shift+P 
+    - Bracket Pair Colorizer 2 - colore as chaves, cochetes e parenteses
+- Material Icon Theme
+- Cypress Helper
+    - Visual Studio IntelliCode
+ */
+
 describe("Tickets", () => {
     beforeEach(() => cy.visit("https://ticket-box.s3.eu-central-1.amazonaws.com/index.html"));
 

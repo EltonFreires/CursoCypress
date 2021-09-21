@@ -71,7 +71,6 @@ context('Actions', () => {
     });
 
     it('.check() - Radio element', () => {        // https://on.cypress.io/check
-
         cy.get('.action-radios [type="radio"]').not('[disabled]').check().should('be.checked');
         cy.get('.action-radios [type="radio"]').check('radio1').should('be.checked');
         cy.get('.action-radios [type="radio"]').check('radio3', { force: true }).should('be.checked');
@@ -97,7 +96,6 @@ context('Actions', () => {
     })
 
     it('.scrollIntoView() - Barra de rolagem', () => { // https://on.cypress.io/scrollintoview
-
         // (we need to scroll to see them)
         cy.get('#scroll-horizontal button').should('not.be.visible');
         cy.get('#scroll-horizontal button').scrollIntoView().should('be.visible');
@@ -110,7 +108,6 @@ context('Actions', () => {
     })
 
     it('.trigger() - trigger an event on a DOM element', () => {// https://on.cypress.io/trigger
-
         // To interact with a range input (slider), we need to set its value & trigger the event to signal it changed
         // Here, we invoke jQuery's val() method to set the value and trigger the 'change' event
         cy.get('.trigger-input-range').invoke('val', 25).trigger('change');
@@ -125,7 +122,6 @@ context('Actions', () => {
         // |                                   |
         // | bottomLeft   bottom   bottomRight |
         //  -----------------------------------
-
         cy.get('#scrollable-horizontal').scrollTo('right');
         // or you can scroll to a specific coordinate (x axis, y axis) in pixels
         cy.get('#scrollable-vertical').scrollTo(250, 250);
