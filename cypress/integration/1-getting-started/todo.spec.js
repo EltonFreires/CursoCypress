@@ -4,9 +4,7 @@
 // please read our getting started guide: https://on.cypress.io/introduction-to-cypress
 
 describe('Exemplos app', () => {
-    beforeEach(() => {
-        cy.visit('https://example.cypress.io/todo')
-    });
+    beforeEach(() => { cy.visit('https://example.cypress.io/todo'); })
     let phase01 = "Pay electric bill";
     let phase02 = "Walk the dog";
     let phase03 = "Feed the cat";
