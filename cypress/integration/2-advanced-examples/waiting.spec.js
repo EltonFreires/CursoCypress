@@ -1,7 +1,6 @@
-/// <reference types="cypress" />
-
-context('Waiting', () => { 
+context('Waiting', () => {
   beforeEach(() => { cy.visit('https://example.cypress.io/commands/waiting') });
+  // https://on.cypress.io/wait
   // https://on.cypress.io/best-practiccd es#Unnecessary-Waiting
 
   it('cy.wait() - Esperando um tempo determidado.', () => {
@@ -10,7 +9,7 @@ context('Waiting', () => {
     cy.get('.wait-input2').type('Wait 1000ms after typing');
     cy.wait(500);
     cy.get('.wait-input3').type('Wait 1000ms after typing');
-    cy.wait(500);    
+    cy.wait(500);
   });
 
   it('cy.wait() - esperando uma rota específica.', () => {

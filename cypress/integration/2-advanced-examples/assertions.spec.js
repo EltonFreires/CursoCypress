@@ -27,7 +27,7 @@ context('Assertions', () => {
     })
 
     describe('Explicit Assertions', () => { // https://on.cypress.io/assertions
-        
+
         /* it('expect - make an assertion about a specified subject', () => {
             // We can use Chai's BDD style assertions
             expect(true).to.be.true
@@ -102,12 +102,12 @@ context('Assertions', () => {
             const normalizeText = (s) => s.replace(/\s/g, '').toLowerCase();
 
             cy.get('.two-elements').find('.first').then(($first) => {
-                    text = normalizeText($first.text());
-                });
+                text = normalizeText($first.text());
+            });
             cy.get('.two-elements').find('.second').should(($div) => {
-                    const secondText = normalizeText($div.text());
-                    expect(secondText, 'second text').to.equal(text);
-                });
+                const secondText = normalizeText($div.text());
+                expect(secondText, 'second text').to.equal(text);
+            });
         });
 
         it('assert - assert shape of an object', () => {
@@ -120,9 +120,21 @@ context('Assertions', () => {
 
         it('retries the should callback until assertions pass', () => {
             cy.get('#random-number').should(($div) => {
-                    const n = parseFloat($div.text());
-                    expect(n).to.be.gte(1).and.be.lte(10)
-                });
-        });      
+                const n = parseFloat($div.text());
+                expect(n).to.be.gte(1).and.be.lte(10)
+            });
+        });
+
+        it('greater than, less than', () => {
+            const my_value = 5000.00;
+            
+            cy.wrap(my_value).should('be.gt', 4999.99); // greater than
+            cy.wrap(my_value).should('be.gte', 5000); // greater than equal to
+
+            cy.wrap(my_value).should('be.lt', 5000.1);// less than
+            cy.wrap(my_value).should('be.lte', 5000); // less than equal to
+            
+            cy.wrap(my_value).should('be.within', 5000, 6000);
+        });
     });
 });
